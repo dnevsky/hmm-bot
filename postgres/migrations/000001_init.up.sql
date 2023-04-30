@@ -1,0 +1,12 @@
+CREATE TABLE hmmbot
+(
+    id SERIAL PRIMARY KEY,
+    memberId INT UNIQUE NOT NULL,
+    nickname VARCHAR(255) NOT NULL,
+    admin INT NOT NULL DEFAULT 0,
+    hospital VARCHAR(10) NOT NULL,
+    rang INT NOT NULL,
+    messages INT NOT NULL DEFAULT 0,
+    lvl INT NOT NULL DEFAULT 0,
+    ts TIMESTAMP NOT NULL DEFAULT NOW()
+);

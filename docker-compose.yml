@@ -1,0 +1,21 @@
+version: '3.1'
+
+services:
+  postgres:
+    image: postgres:15.2-alpine
+    container_name: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: hmmBot
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: qwerty
+    volumes:
+      - ./.database/postgres/data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  migrate:
+    image: migrate/migrate
+    volumes:
+      - ./postgres/migrations:/migrations
+    command: ["-path", "./migrations", "-database", "postgres://postgres:qwerty@postgres:5432/hmmBot?sslmode=disable", "up"]
