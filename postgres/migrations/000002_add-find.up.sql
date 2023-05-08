@@ -1,0 +1,11 @@
+CREATE TABLE find
+(
+    id SERIAL PRIMARY KEY,
+    ls INT NOT NULL,
+    sf INT NOT NULL,
+    lv INT NOT NULL,
+    players VARCHAR(255) NOT NULL,
+    client VARCHAR(20) NOT NULL,
+    ip VARCHAR(20) NOT NULL,
+    ts TIMESTAMP NOT NULL DEFAULT NOW()
+);

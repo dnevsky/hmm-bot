@@ -1,21 +1,45 @@
-version: '3.1'
+version: '3.8'
 
 services:
   postgres:
     image: postgres:15.2-alpine
     container_name: postgres
     restart: always
-    environment:
-      POSTGRES_DB: hmmBot
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: qwerty
+    env_file:
+      - .env
     volumes:
       - ./.database/postgres/data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
 
-  migrate:
+  mysql:
+    image: mysql
+    container_name: mysql
+    # restart: always
+    env_file:
+      - .env
+    volumes:
+      - ./.database/mysql:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+  migrate-postgres:
     image: migrate/migrate
     volumes:
       - ./postgres/migrations:/migrations
-    command: ["-path", "./migrations", "-database", "postgres://postgres:qwerty@postgres:5432/hmmBot?sslmode=disable", "up"]
+    command: ["-path", "./migrations", "-database", "postgres://postgres:qwerty@postgres:5432/hmmBot?sslmode=disable", "up"] 
+
+  migrate-mysql:
+    image: migrate/migrate
+    volumes:
+      - ./postgres/migrations:/migrations
+    command: ["-path", "./migrations", "-database", "mysql://mysql:qwerty@tcp(mysql:3306)/hmmbot?multiStatements=true", "up"]
+
+  hmm-bot:
+    image: dnevsky/hmm-bot
+    container_name: hmm-bot
+    env_file:
+      - .env
+    depends_on:
+      - mysql
+    command: ["./wait-for-it.sh", "mysql:3306", "-t", "60", "--", "./hmm-bot"]

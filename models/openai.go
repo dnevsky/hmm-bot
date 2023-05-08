@@ -1,21 +1,6 @@
-package main
+package models
 
 import "time"
-
-type Anekdot struct {
-	Content string `json:"content"`
-}
-
-type Find struct {
-	ID      int      `json:"id"`
-	LS      int      `json:"ls"`
-	SF      int      `json:"sf"`
-	LV      int      `json:"lv"`
-	Players []string `json:"players"`
-	Client  string   `json:"client"`
-	IP      string   `json:"ip"`
-	TS      int      `json:"ts"`
-}
 
 type Converse struct {
 	From    int                    `json:"id"`
@@ -57,7 +42,6 @@ type ChatCompletionResponse struct {
 }
 
 func NewChatCompletionRequestBuilder(system string, model string, role string) *ChatCompletionRequest {
-
 	a := &ChatCompletionRequest{
 		Model:            model,
 		Messages:         []Message{},
@@ -77,6 +61,6 @@ func NewChatCompletionRequestBuilder(system string, model string, role string) *
 	return a
 }
 
-func (c *ChatCompletionRequest) AddToRequest(message *Message) {
-	c.Messages = append(c.Messages, *message)
+func (c *ChatCompletionRequest) AddToRequest(message Message) {
+	c.Messages = append(c.Messages, message)
 }
