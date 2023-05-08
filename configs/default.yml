@@ -1,0 +1,22 @@
+checkWhiteList: false
+
+# db:
+#   username: "postgres"
+#   host: "localhost"
+#   port: "5432"
+#   db: "hmmBot"
+#   ssl: "disable"
+
+db:
+  username: "doLambert"
+  host: "193.109.79.82"
+  port: "3306"
+  db: "mzhelper"
+  net: "tcp"
+
+# db:
+#   username: "mysql"
+#   host: "mysql"
+#   port: "3306"
+#   db: "hmmBot"
+#   net: "tcp"
