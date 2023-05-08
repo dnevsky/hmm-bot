@@ -1,7 +1,6 @@
 package pkg
 
 import (
-	"VKBotAPI/models"
 	"bytes"
 	"encoding/json"
 	"errors"
@@ -9,6 +8,8 @@ import (
 	"io/ioutil"
 	"net/http"
 	"time"
+
+	"github.com/dnevsky/hmm-bot/models"
 )
 
 const (

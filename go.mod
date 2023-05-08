@@ -1,4 +1,4 @@
-module VKBotAPI
+module github.com/dnevsky/hmm-bot
 
 go 1.19
 

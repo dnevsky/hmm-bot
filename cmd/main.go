@@ -1,18 +1,19 @@
 package main
 
 import (
-	"VKBotAPI/pkg"
-	"VKBotAPI/storage"
-	msql "VKBotAPI/storage/mysql"
-	"VKBotAPI/vkapi"
 	"log"
 	"math/rand"
 	"os"
 	"regexp"
 	"time"
 
+	msql "github.com/dnevsky/hmm-bot/storage/mysql"
+
 	"github.com/SevereCloud/vksdk/v2/api"
 	"github.com/SevereCloud/vksdk/v2/api/params"
+	"github.com/dnevsky/hmm-bot/pkg"
+	"github.com/dnevsky/hmm-bot/storage"
+	"github.com/dnevsky/hmm-bot/vkapi"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/joho/godotenv"
 	_ "github.com/lib/pq"

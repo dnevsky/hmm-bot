@@ -1,7 +1,6 @@
 package vkapi
 
 import (
-	"VKBotAPI/pkg"
 	"bytes"
 	"context"
 	"errors"
@@ -13,6 +12,7 @@ import (
 
 	"github.com/SevereCloud/vksdk/v2/api/params"
 	"github.com/SevereCloud/vksdk/v2/events"
+	"github.com/dnevsky/hmm-bot/pkg"
 	"github.com/jordan-patterson/gtts"
 )
 

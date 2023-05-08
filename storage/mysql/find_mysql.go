@@ -1,11 +1,11 @@
 package msql
 
 import (
-	"VKBotAPI/models"
 	"database/sql"
 	"encoding/json"
 	"errors"
 
+	"github.com/dnevsky/hmm-bot/models"
 	"github.com/jmoiron/sqlx"
 )
 

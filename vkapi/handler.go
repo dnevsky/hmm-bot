@@ -1,8 +1,6 @@
 package vkapi
 
 import (
-	"VKBotAPI/pkg"
-	"VKBotAPI/storage"
 	"context"
 	"fmt"
 	"regexp"
@@ -11,6 +9,8 @@ import (
 	"github.com/SevereCloud/vksdk/v2/api"
 	"github.com/SevereCloud/vksdk/v2/events"
 	"github.com/SevereCloud/vksdk/v2/longpoll-bot"
+	"github.com/dnevsky/hmm-bot/pkg"
+	"github.com/dnevsky/hmm-bot/storage"
 	"github.com/sirupsen/logrus"
 )
 

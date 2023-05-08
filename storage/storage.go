@@ -1,9 +1,9 @@
 package storage
 
 import (
-	"VKBotAPI/models"
-	msql "VKBotAPI/storage/mysql"
+	msql "github.com/dnevsky/hmm-bot/storage/mysql"
 
+	"github.com/dnevsky/hmm-bot/models"
 	"github.com/jmoiron/sqlx"
 )
 

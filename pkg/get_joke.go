@@ -1,13 +1,13 @@
 package pkg
 
 import (
-	"VKBotAPI/models"
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
 	"net/http"
 	"strings"
 
+	"github.com/dnevsky/hmm-bot/models"
 	"golang.org/x/text/encoding/charmap"
 )
 
