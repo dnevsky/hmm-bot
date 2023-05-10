@@ -33,7 +33,7 @@ services:
     image: migrate/migrate
     volumes:
       - ./postgres/migrations:/migrations
-    command: ["-path", "./migrations", "-database", "mysql://mysql:qwerty@tcp(mysql:3306)/hmmbot?multiStatements=true", "up"]
+    command: ["-path", "./migrations", "-database", "mysql://mysql:qwerty@tcp(mysql:3306)/hmmBot?multiStatements=true", "up"]
 
   hmm-bot:
     image: dnevsky/hmm-bot

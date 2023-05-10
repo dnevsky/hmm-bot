@@ -10,7 +10,7 @@ create-migrate:
 	migrate create -ext sql -dir ./postgres/migrations -seq <name>
 
 migrate:
-	docker-compose run migrate
+	docker-compose run migrate-mysql
 
 build:
 	docker build --tag dnevsky/hmm-bot .

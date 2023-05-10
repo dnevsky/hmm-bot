@@ -7,16 +7,16 @@ checkWhiteList: false
 #   db: "hmmBot"
 #   ssl: "disable"
 
-db:
-  username: "doLambert"
-  host: "193.109.79.82"
-  port: "3306"
-  db: "mzhelper"
-  net: "tcp"
-
 # db:
-#   username: "mysql"
-#   host: "mysql"
+#   username: "doLambert"
+#   host: "193.109.79.82"
 #   port: "3306"
-#   db: "hmmBot"
+#   db: "mzhelper"
 #   net: "tcp"
+
+db:
+  username: "mysql"
+  host: "mysql"
+  port: "3306"
+  db: "hmmBot"
+  net: "tcp"

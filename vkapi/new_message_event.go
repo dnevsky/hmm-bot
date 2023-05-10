@@ -30,7 +30,7 @@ func (h *Handler) initMessages() []Message {
 		*newMessage("/help", "/help", "equal", "посмотреть все команды.", h.cmdHelp),
 		*newMessage("/online", "/online", "equal", "посмотреть онлайн на серверах Diamond.", h.cmdOnline),
 		*newMessage("/8ball", "/8ball <текст>", "contains", "магический шар.", h.cmdBall),
-		*newMessage("/find", "/find", "equal", "просмотр сотрудников онлайн.", h.cmdFind),
+		// *newMessage("/find", "/find", "equal", "просмотр сотрудников онлайн.", h.cmdFind),
 		*newMessage("/infa", "/infa <текст>", "contains", "узнать вероятность какого-то события.", h.cmdInfa),
 		*newMessage(`^/kto \[id(\d+)\|.+\]$`, "/kto <упомянуть пользователя>", "regex", "узнать описание/действия/желания этого игрока.", h.cmdKto),
 		*newMessage(`^/who .+`, "/who <упомянуть пользователя>", "regex", "узнать кто в беседе подходит под ваше описание.", h.cmdWho),

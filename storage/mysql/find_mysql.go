@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"encoding/json"
 	"errors"
+	"fmt"
 
 	"github.com/dnevsky/hmm-bot/models"
 	"github.com/jmoiron/sqlx"
@@ -26,7 +27,7 @@ func (r *FindMySQL) GetFind() (models.Find, error) {
 		if err == sql.ErrNoRows {
 			return find, errors.New("GetFind: find not found.")
 		}
-		return find, errors.New("GetFind: error while search find.")
+		return find, errors.New(fmt.Sprintf("GetFind: error while search find.\n%s", err.Error()))
 	}
 
 	if ok := json.Unmarshal([]byte(pl), &find.Players); ok != nil {
