@@ -38,6 +38,7 @@ services:
   hmm-bot:
     image: dnevsky/hmm-bot
     container_name: hmm-bot
+    restart: always
     env_file:
       - .env
     depends_on:
